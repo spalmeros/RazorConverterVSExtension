@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 The razor-converter is a simple tool for converting Microsoft&reg; ASP.NET MVC WebForms Views to the new Razor syntax.
 It was initially developed by the Telerik ASP.NET MVC team for internal use, but it now lives its own life on GitHub.
 
@@ -28,3 +29,7 @@ Options:
 
 A file with cshtml extension will be created for each input file.
 Existing files will be OVERWRITTEN so be careful.
+=======
+RazorConverterVSExtension
+=========================
+>>>>>>> 73ea6ec12db98569add89078d848a8b749f39c58
