@@ -1,4 +1,4 @@
-﻿namespace AspxToRazorForms
+﻿namespace ConvertExtension.Forms
 {
     partial class RazorForm
     {
@@ -122,7 +122,7 @@
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Image = global::AspxToRazorForms.Properties.Resources.refreshi_256;
+            this.btnReset.Image = global::ConvertExtension.Forms.Properties.Resources.refreshi_256;
             this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReset.Location = new System.Drawing.Point(145, 344);
             this.btnReset.Name = "btnReset";
@@ -135,7 +135,7 @@
             // btnGenerateRazor
             // 
             this.btnGenerateRazor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerateRazor.Image = global::AspxToRazorForms.Properties.Resources.icon_processi;
+            this.btnGenerateRazor.Image = global::ConvertExtension.Forms.Properties.Resources.icon_processi;
             this.btnGenerateRazor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGenerateRazor.Location = new System.Drawing.Point(360, 344);
             this.btnGenerateRazor.Name = "btnGenerateRazor";
@@ -175,7 +175,7 @@
             // 
             // successPictureBox
             // 
-            this.successPictureBox.Image = global::AspxToRazorForms.Properties.Resources.iconi_go;
+            this.successPictureBox.Image = global::ConvertExtension.Forms.Properties.Resources.iconi_go;
             this.successPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("successPictureBox.InitialImage")));
             this.successPictureBox.Location = new System.Drawing.Point(558, 344);
             this.successPictureBox.Name = "successPictureBox";

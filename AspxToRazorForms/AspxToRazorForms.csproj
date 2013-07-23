@@ -8,8 +8,8 @@
     <ProjectGuid>{75CAA8ED-58E0-401E-AA8D-C905094300D8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AspxToRazorForms</RootNamespace>
-    <AssemblyName>AspxToRazorForms</AssemblyName>
+    <RootNamespace>ConvertExtension.Forms</RootNamespace>
+    <AssemblyName>ConvertExtension.Forms</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>

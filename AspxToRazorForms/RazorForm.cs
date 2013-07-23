@@ -1,15 +1,14 @@
-﻿namespace AspxToRazorForms
-{
-    using System;
-    using System.ComponentModel.Composition;
-    using System.IO;
-    using System.Text;
-    using System.Windows.Forms;
-    using Telerik.RazorConverter;
-    using Telerik.RazorConverter.Razor.DOM;
-    using System.ComponentModel.Composition.Hosting;
-    using System.Collections.Generic;
+﻿using System;
+using System.ComponentModel.Composition;
+using System.ComponentModel.Composition.Hosting;
+using System.IO;
+using System.Text;
+using System.Windows.Forms;
+using Telerik.RazorConverter;
+using Telerik.RazorConverter.Razor.DOM;
 
+namespace ConvertExtension.Forms
+{
     /// <summary>
     /// Razor form
     /// </summary>

@@ -1,8 +1,7 @@
 ﻿// PkgCmdID.cs
 // MUST match PkgCmdID.h
-using System;
 
-namespace RajAththanayake.WebFormsRazorConverterVsExtension
+namespace ConvertExtension.Extension
 {
     static class PkgCmdIDList
     {

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RajAththanayake.WebFormsRazorConverterVsExtension {
+namespace ConvertExtension.Extension {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace RajAththanayake.WebFormsRazorConverterVsExtension {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("RajAththanayake.WebFormsRazorConverterVsExtension.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ConvertExtension.Extension.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
