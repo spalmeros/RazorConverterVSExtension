@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Vsix xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="1.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2010">
-    <Identifier Id="b3611c6c-b48a-465e-88ea-86682f003228">
+    <Identifier Id="4f7550a4-b0b7-4fc3-90ef-ed6bc2e9f456">
         <Name>WebForms to Razor Converter</Name>
         <Author>Dana Benson</Author>
         <Version>2.0</Version>
