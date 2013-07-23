@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Vsix xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="1.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2010">
     <Identifier Id="b3611c6c-b48a-465e-88ea-86682f003228">
-        <Name>WebFormsRazorConverterVsExtension</Name>
-        <Author>Raj Aththanayake, Dana Benson</Author>
+        <Name>WebForms to Razor Converter</Name>
+        <Author>Dana Benson</Author>
         <Version>2.0</Version>
         <Description xml:space="preserve">This tool converts WebForms(ASPX/ASCX) Views to corresponding Razor Views (CSHTML only). </Description>
         <Locale>1033</Locale>

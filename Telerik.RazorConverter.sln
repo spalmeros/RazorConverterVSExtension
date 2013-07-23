@@ -1,9 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestItems", "TestItems", "{02F8810D-BE2D-4D6E-9EF7-7A7DBA8502A6}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F4DA0538-E425-4E71-A508-0D024B125043}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VSExtension", "VSExtension", "{BC9BF68A-9FC6-43E3-801C-A7FF5AC1A5E7}"
 EndProject
