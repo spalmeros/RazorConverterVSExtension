@@ -10,14 +10,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VSExtension", "VSExtension"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspxToRazorForms", "AspxToRazorForms\AspxToRazorForms.csproj", "{75CAA8ED-58E0-401E-AA8D-C905094300D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormsRazorConverterVsExtension", "WebFormsRazorConverterVsExtension\WebFormsRazorConverterVsExtension.csproj", "{E7ECE4E9-8E01-498E-A212-162C0EC41928}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E0A742A4-5A21-4263-9F34-EAD085E34CFA}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspxToRazorExtension", "AspxToRazorExtension\AspxToRazorExtension.csproj", "{E7ECE4E9-8E01-498E-A212-162C0EC41928}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

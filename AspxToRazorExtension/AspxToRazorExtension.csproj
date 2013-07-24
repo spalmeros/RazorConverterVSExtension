@@ -145,7 +145,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <VSCTCompile Include="WebFormsRazorConverterVsExtension.vsct">
+    <VSCTCompile Include="AspxToRazorExtension.vsct">
       <ResourceName>Menus.ctmenu</ResourceName>
     </VSCTCompile>
   </ItemGroup>
