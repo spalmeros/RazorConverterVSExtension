@@ -47,7 +47,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Telerik.RazorConverter">
-      <HintPath>..\Telerik.RazorConverter\bin\Debug\Telerik.RazorConverter.dll</HintPath>
+      <HintPath>..\Telerik.RazorConverter\obj\Debug\Telerik.RazorConverter.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
