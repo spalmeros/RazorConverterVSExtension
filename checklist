@@ -1,0 +1,1229 @@
+<asp:FormView ID="HeaderView" runat="server" DataKeyNames="Id" 
+            AllowPaging="True" 
+            DataSourceID="EntityDataSource1" DefaultMode="Edit" Width="100%" 
+          onitemupdated="HeaderView_ItemUpdated">
+            <EditItemTemplate>
+               <table style="width: 100%; font-family: Tahoma; font-size: small;" 
+                  class="stylefontandSize">
+                  <tr>
+                     <td>
+                         Job Number:
+                     </td>
+                     <td colspan="3">
+                        <asp:TextBox ID="TextBox1" runat="server" 
+                           Text='<%# Bind("JobNumber") %>' />
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                         Start Date:
+                     </td>
+                     <td>
+                        <asp:TextBox ID="StartDate" runat="server"  
+                           Text='<%# Bind("StartDate") %>' />
+                       
+                     
+                       
+                     </td>
+                     <td>
+                         End Date:
+                     </td>
+                     <td>
+                         
+                        <asp:TextBox ID="EndDate_txt" runat="server" Text='<%# Bind("EndDate") %>' />
+                        
+                         
+                        
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        Lead Inspector:
+                     </td>
+                     <td>
+                        <asp:TextBox ID="TextBox4" runat="server" 
+                           Text='<%# Bind("LeadInspector") %>' />
+                     </td>
+                     <td>
+                         Certification No:
+                     </td>
+                     <td>
+                        <asp:TextBox ID="TextBox5" runat="server" 
+                           Text='<%# Bind("CertificationNo") %>' />
+                     </td>
+                  </tr>
+               </table>
+               <table style="width:100%; font-family: Tahoma; font-size: small;" 
+                  class="stylefontandSize">
+                  <tr>
+                     <td class="style2">
+                        DOT Regulated Tank
+                     </td>
+                     <td>
+                        <asp:CheckBoxList ID="DOTregulatedtank_chl" runat="server" SelectedValue='<%# Bind("DOTRegulatedTank") %>' 
+                           style="display:inline" Width="107px" RepeatDirection="Horizontal">
+                           <asp:ListItem onclick = "MutExChkList(this);" >Yes</asp:ListItem>
+                           <asp:ListItem onclick = "MutExChkList(this);">No</asp:ListItem>
+                           <asp:ListItem style="display:none;" onclick = "MutExChkList(this);"></asp:ListItem>
+                        </asp:CheckBoxList>
+                     </td>
+                     <td>
+                        &nbsp;
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="style2">
+                        Tank Files Available for Review:
+                     </td>
+                     <td>
+                        <asp:CheckBoxList ID="TankFiles_chl" runat="server" SelectedValue='<%# Bind("TankFiles") %>'
+                           style="display:inline" Width="107px" RepeatDirection="Horizontal">
+                           <asp:ListItem onclick = "MutExChkList(this);" >Yes</asp:ListItem>
+                           <asp:ListItem onclick = "MutExChkList(this);">No</asp:ListItem>
+                           <asp:ListItem style="display:none;" onclick = "MutExChkList(this);"></asp:ListItem>
+                        </asp:CheckBoxList>
+                     </td>
+                     <td>
+                        &nbsp;
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="style2">
+                        Appropriate Paperwork left on site
+                     </td>
+                     <td>
+                        <asp:CheckBoxList ID="appropriateppw_chl" runat="server" SelectedValue =  '<%# Bind("AppropriatePPW") %>' 
+                           style="display:inline" Width="107px" RepeatDirection="Horizontal">
+                           <asp:ListItem onclick = "MutExChkList(this);" >Yes</asp:ListItem>
+                           <asp:ListItem onclick = "MutExChkList(this);">No</asp:ListItem>
+                           <asp:ListItem style="display:none;" onclick = "MutExChkList(this);"></asp:ListItem>
+                        </asp:CheckBoxList>
+                         &nbsp;</td>
+                     <td>
+                        &nbsp;
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="style2">
+                        Type of Inspection
+                     </td>
+                     <td>
+                        <asp:CheckBoxList ID="typeofins_chl" runat="server"  SelectedValue ='<%# Bind("TypeofInspection") %>'
+                           style="display:inline" Width="326px" RepeatDirection="Horizontal">
+                           <asp:ListItem onclick = "MutExChkList(this);">External</asp:ListItem>
+                           <asp:ListItem onclick = "MutExChkList(this);">Internal</asp:ListItem>
+                           <asp:ListItem style="display:none;" onclick = "MutExChkList(this);"></asp:ListItem>
+                           <asp:ListItem onclick = "MutExChkList(this);">Both</asp:ListItem>
+                        </asp:CheckBoxList>
+                     </td>
+                     <td>
+                        &nbsp;
+                     </td>
+                  </tr>
+               </table>
+               <table border="1" cellspacing="0" cellpadding="0" width="98%" 
+                  style="font-family: Tahoma; font-size: small" class="stylefontandSize">
+                  <tbody>
+                     <tr>
+                        <td colspan="2" style="text-align: center" class="styleheader"><b>GENERAL:</b></td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Tank Number / Identification:</td>
+                        <td>
+                           <asp:TextBox ID="tankno_txt" runat="server" Width="90%" Text='<%# Bind("TankNumber") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">OWNER:</td>
+                        <td>
+                           <asp:TextBox ID="owner_txt" runat="server" Width="90%" Text='<%# Bind("Owner") %>' ></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Client (If different than owener)</td>
+                        <td>
+                           <asp:TextBox ID="client_txt" runat="server" Width="90%" Text='<%# Bind("Client") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Tank Location</td>
+                        <td>
+                           <asp:TextBox ID="tanklocation_txt" runat="server" Width="90%" Text='<%# Bind("TankLocation") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Type of facility (Terminal, Refinery, etc)</td>
+                        <td>
+                            <asp:DropDownList ID="typeoffacility_ddl" runat="server" AppendDataBoundItems="True" DataSourceID="getFacilityType" DataTextField="Item_Description" DataValueField="Item_Description" SelectedValue='<%# Bind("TypeofFacility") %>' Width="90%">
+                                <asp:ListItem></asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:SqlDataSource ID="getFacilityType" runat="server" ConnectionString="<%$ ConnectionStrings:InspectionsEnterpriseConnectionString %>" SelectCommand="SELECT [Item_Description] FROM [RAM_Checklist_DropdownSelections] WHERE ([Dropdown_Description] = @Dropdown_Description)">
+                                <SelectParameters>
+                                    <asp:Parameter DefaultValue="Facility" Name="Dropdown_Description" Type="String" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Manufacturer</td>
+                        <td>
+                           <asp:TextBox ID="manufacturer_txt" runat="server" Width="90%" Text='<%# Bind("Manufacturer") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Design Standard</td>
+                        <td>
+                            <asp:DropDownList ID="DesignStan_ddl" runat="server" AppendDataBoundItems="True" DataSourceID="DesignStand_DS" DataTextField="Item_Description" DataValueField="Item_Description" SelectedValue='<%# Bind("DesignStandard") %>' Width="90%">
+                                <asp:ListItem></asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:SqlDataSource ID="DesignStand_DS" runat="server" ConnectionString="<%$ ConnectionStrings:InspectionsEnterpriseConnectionString %>" SelectCommand="SELECT [Item_Description] FROM [RAM_Checklist_DropdownSelections] WHERE ([Dropdown_Description] = @Dropdown_Description)">
+                                <SelectParameters>
+                                    <asp:Parameter DefaultValue="DesignStandard" Name="Dropdown_Description" Type="String" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Product Prior to Inspection</td>
+                        <td>
+                           <asp:TextBox ID="productprior_txt" runat="server" Width="90%" Text='<%# Bind("ProductPriorInspection") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Design Specific Gravity</td>
+                        <td>
+                           <asp:TextBox ID="designspecifict_txt" runat="server" Width="90%" Text='<%# Bind("DesignSpecificGravity") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">PRODUCT SPECIFIC GRAVITY:</td>
+                        <td>
+                           <asp:TextBox ID="productspecific_txt" runat="server" Width="90%" Text='<%# Bind("ProductSpecificGravity") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">DESIGN PRESSURE:</td>
+                        <td>
+                           <asp:TextBox ID="designpressure_txt" runat="server" Width="90%" Text='<%# Bind("DesignPressure") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">OPERATING TEMPERATURE:</td>
+                        <td>
+                           <asp:TextBox ID="operatingtemp_txt" runat="server" Width="90%" Text='<%# Bind("OperatingTemperature") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td valign="top" class="style1" >CATHODIC PROTECTION &amp; TYPE
+                           (Impressed Current, Sacrificial Anodes):
+                        </td>
+                        <td>
+                            <asp:DropDownList ID="Cathodic_ddl" Width="90%" SelectedValue='<%# Bind("CathodicProtection") %>' runat="server" AppendDataBoundItems="True" DataSourceID="CathodicProtection_DS" DataTextField="Item_Description" DataValueField="Item_Description">
+                                <asp:ListItem></asp:ListItem>
+                            </asp:DropDownList>
+                                         <asp:SqlDataSource ID="CathodicProtection_DS" runat="server" ConnectionString="<%$ ConnectionStrings:InspectionsEnterpriseConnectionString %>" SelectCommand="SELECT [Item_Description] FROM [RAM_Checklist_DropdownSelections] WHERE ([Dropdown_Description] = @Dropdown_Description)">
+                                             <SelectParameters>
+                                                 <asp:Parameter DefaultValue="Cathodic " Name="Dropdown_Description" Type="String" />
+                                             </SelectParameters>
+                            </asp:SqlDataSource>
+
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">NAMEPLATE PRESENT:</td>
+                        <td>
+                           <asp:TextBox ID="nameplatepresent_txt" runat="server" Width="90%" Text='<%# Bind("NameplatePresent") %>' ></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">LATITUDE:</td>
+                        <td>
+                           <asp:TextBox ID="latitude_txt" runat="server" Width="90%" Text='<%# Bind("Latitude") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">LONGITUDE:</td>
+                        <td>
+                           <asp:TextBox ID="longitude_txt" runat="server" Width="90%" Text='<%# Bind("Longitude") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">DIAMETER:</td>
+                        <td>
+                           <asp:TextBox ID="diameter_txt" runat="server" Width="90%" Text='<%# Bind("Diameter") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">HEIGHT:</td>
+                        <td>
+                           <asp:TextBox ID="height_txt" runat="server" Width="90%" Text='<%# Bind("Height") %>' ></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">CAPACITY GROSS:</td>
+                        <td>
+                           <asp:TextBox ID="capacitygross_txt" runat="server" Width="90%" Text='<%# Bind("CapacityGross") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">OPERATING HEIGHT:</td>
+                        <td>
+                           <asp:TextBox ID="operatingheight_txt" runat="server" Width="90%" Text='<%# Bind("OperatingHeight") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">CAPACITY NOMINAL:</td>
+                        <td>
+                           <asp:TextBox ID="capacitynominal_txt" runat="server" Width="90%" Text='<%# Bind("CapacityNominal") %>' ></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">FOUNDATION:</td>
+                        <td>
+                           <asp:TextBox ID="foundation_txt" runat="server" Width="90%" Text='<%# Bind("Foundation") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">BOTTOM:</td>
+                        <td>
+                           <asp:TextBox ID="bottom_txt" runat="server" Width="90%" Text='<%# Bind("Bottom") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">SHELL:</td>
+                        <td>
+                           <asp:TextBox ID="shell_txt" runat="server" Width="90%" Text='<%# Bind("Shell") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">MATERIAL OF CONSTRUCTION:</td>
+                        <td>
+                           <asp:TextBox ID="materialofcons_txt" runat="server" Width="90%" Text='<%# Bind("MaterialofConstruction") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">COURSE 1 AVERAGE THICKNESS:</td>
+                        <td>
+                           <asp:TextBox ID="courseOneaverage_txt" runat="server" Width="90%" Text='<%# Bind("Course1Average") %>' ></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">FIXED ROOF:</td>
+                        <td>
+                           <asp:TextBox ID="fixedroof_txt" runat="server" Width="90%" Text='<%# Bind("FixedRoof") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">FLOATING ROOF:</td>
+                        <td>
+                           <asp:TextBox ID="floatingroof_txt" runat="server" Width="90%" Text='<%# Bind("FloatingRoof") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">PRIMARY SEAL:</td>
+                        <td>
+                           <asp:TextBox ID="primaryseal_txt" runat="server" Width="90%" Text='<%# Bind("PrimarySeal") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">SECONDARY SEAL:</td>
+                        <td>
+                           <asp:TextBox ID="secondaryseal_txt" runat="server" Width="90%" Text='<%# Bind("SecondarySeal") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">YEAR OF CONSTRUCTION:</td>
+                        <td>
+                           <asp:TextBox ID="yearofcons_txt" runat="server" Width="90%" Text='<%# Bind("YearofConstruction") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">SECOND BOTTOM &amp; DATE INSTALLED:</td>
+                        <td>
+                           <asp:TextBox ID="secondbottom_txt" runat="server" Width="90%" Text='<%# Bind("SecondBottom") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">LAST COATED:</td>
+                        <td>
+                           <asp:TextBox ID="lastcoated_txt" runat="server" Width="90%" Text='<%# Bind("LastCoated") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">LAST INSPECTION:</td>
+                        <td>
+                           <asp:TextBox ID="lastinspection_txt" runat="server" Width="90%" Text='<%# Bind("LastInspection") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Stairway</td>
+                        <td>
+                           <asp:TextBox ID="stairway_txt" runat="server" Width="90%" Text='<%# Bind("Stairway") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Floating Roof Access</td>
+                        <td>
+                           <asp:TextBox ID="floatingroofaccess_txt" runat="server" Width="90%" Text='<%# Bind("FloatingRoofAccess") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Bottom and Date applied</td>
+                        <td>
+                           <asp:TextBox ID="bottomanddateapplied_txt" runat="server" Width="90%" Text='<%# Bind("BottomandDateApplied") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td rowspan="2" class="style1">Shell</td>
+                        <td>
+                           EXTERNAL:
+                           <asp:TextBox ID="TextBox38" runat="server" Width="50%" Text='<%# Bind("ShellExternal") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           INTERNAL:
+                           <asp:TextBox ID="TextBox39" runat="server" Width="50%" Text='<%# Bind("ShellInternal") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td rowspan="2" class="style1">Fixed Roof</td>
+                        <td>
+                           EXTERNAL:
+                           <asp:TextBox ID="fixedroofext_txt" runat="server" Width="50%" Text='<%# Bind("FixedRoofExternal") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           INTERNAL:
+                           <asp:TextBox ID="fixedroofint_txt" runat="server" Width="50%" Text='<%# Bind("FixedRoofInternal") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td rowspan="2" class="style1">Floating Roof</td>
+                        <td>
+                           TOP SIDE:
+                           <asp:TextBox ID="floatingrooftopside_txt" runat="server" Width="50%" Text='<%# Bind("FloatingRoofTopSide") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           PRODUCT SIDE:
+                           <asp:TextBox ID="flaotingroofprodside_txt" runat="server" Text='<%# Bind("FloatingRoofProductSide") %>'  
+                              Width="50%"></asp:TextBox>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+               <br />
+               <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" 
+                  CommandName="Update" Text="Update" />
+               &nbsp;
+               <asp:LinkButton ID="UpdateCancelButton" runat="server" 
+                  CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </EditItemTemplate>
+            <InsertItemTemplate>
+               <table style="width: 100%; font-family: Tahoma; font-size: small;" 
+                  class="stylefontandSize">
+                  <tr>
+                     <td>
+                        JobNumber:
+                     </td>
+                     <td colspan="3">
+                        <asp:TextBox ID="TextBox1" runat="server" 
+                           Text='<%# Bind("JobNumber") %>' />
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        StartDate:
+                     </td>
+                     <td>
+                        <asp:TextBox ID="TextBox2" runat="server" 
+                           Text='<%# Bind("StartDate") %>' />
+                     </td>
+                     <td>
+                        EndDate:
+                     </td>
+                     <td>
+                        <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("EndDate") %>' />
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        Lead Inspector:
+                     </td>
+                     <td>
+                        <asp:TextBox ID="TextBox4" runat="server" 
+                           Text='<%# Bind("LeadInspector") %>' />
+                     </td>
+                     <td>
+                        CertificationNo:
+                     </td>
+                     <td>
+                        <asp:TextBox ID="TextBox5" runat="server" 
+                           Text='<%# Bind("CertificationNo") %>' />
+                     </td>
+                  </tr>
+               </table>
+               <table style="width:100%; font-family: Tahoma; font-size: small;" 
+                  class="stylefontandSize">
+                  <tr>
+                     <td class="style2">
+                        DOT Regulated Tank
+                     </td>
+                     <td>
+                        <asp:CheckBoxList ID="DOTregulatedtank_chl" runat="server" SelectedValue='<%# Bind("DOTRegulatedTank") %>' 
+                           style="display:inline" Width="107px" RepeatDirection="Horizontal">
+                           <asp:ListItem onclick = "MutExChkList(this);" >Yes</asp:ListItem>
+                           <asp:ListItem onclick = "MutExChkList(this);">No</asp:ListItem>
+                           <asp:ListItem style="display:none;" onclick = "MutExChkList(this);"></asp:ListItem>
+                        </asp:CheckBoxList>
+                     </td>
+                     <td>
+                        &nbsp;
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="style2">
+                        Tank Files Available for Review:
+                     </td>
+                     <td>
+                        <asp:CheckBoxList ID="TankFiles_chl" runat="server" SelectedValue='<%# Bind("TankFiles") %>'
+                           style="display:inline" Width="107px" RepeatDirection="Horizontal">
+                           <asp:ListItem onclick = "MutExChkList(this);" >Yes</asp:ListItem>
+                           <asp:ListItem onclick = "MutExChkList(this);">No</asp:ListItem>
+                           <asp:ListItem style="display:none;" onclick = "MutExChkList(this);"></asp:ListItem>
+                        </asp:CheckBoxList>
+                     </td>
+                     <td>
+                        &nbsp;
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="style2">
+                        Appropriate Paperwork left on site
+                     </td>
+                     <td>
+                        <asp:CheckBoxList ID="appropriateppw_chl" runat="server" SelectedValue =  '<%# Bind("AppropriatePPW") %>' 
+                           style="display:inline" Width="107px" RepeatDirection="Horizontal">
+                           <asp:ListItem onclick = "MutExChkList(this);" >Yes</asp:ListItem>
+                           <asp:ListItem onclick = "MutExChkList(this);">No</asp:ListItem>
+                           <asp:ListItem style="display:none;" onclick = "MutExChkList(this);"></asp:ListItem>
+                        </asp:CheckBoxList>
+                     </td>
+                     <td>
+                        &nbsp;
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="style2">
+                        Type of Inspection
+                     </td>
+                     <td>
+                        <asp:CheckBoxList ID="typeofins_chl" runat="server"  SelectedValue ='<%# Bind("TypeofInspection") %>'
+                           style="display:inline" Width="326px" RepeatDirection="Horizontal">
+                           <asp:ListItem onclick = "MutExChkList(this);">External</asp:ListItem>
+                           <asp:ListItem onclick = "MutExChkList(this);">Internal</asp:ListItem>
+                           <asp:ListItem style="display:none;" onclick = "MutExChkList(this);">Both</asp:ListItem>
+                           <asp:ListItem onclick = "MutExChkList(this);">Both</asp:ListItem>
+                           
+                        </asp:CheckBoxList>
+                     </td>
+                     <td>
+                        &nbsp;
+                     </td>
+                  </tr>
+               </table>
+               <table border="1" cellspacing="0" cellpadding="0" width="98%" 
+                  style="font-family: Tahoma; font-size: small" class="stylefontandSize">
+                  <tbody>
+                     <tr>
+                        <td colspan="2" style="text-align: center" class="styleheader"><b>GENERAL:</b></td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Tank Number / Identification:</td>
+                        <td>
+                           <asp:TextBox ID="tankno_txt" runat="server" Width="90%" Text='<%# Bind("TankNumber") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">OWNER:</td>
+                        <td>
+                           <asp:TextBox ID="owner_txt" runat="server" Width="90%" Text='<%# Bind("Owner") %>' ></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Client (If different than owener)</td>
+                        <td>
+                           <asp:TextBox ID="client_txt" runat="server" Width="90%" Text='<%# Bind("Client") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Tank Location</td>
+                        <td>
+                           <asp:TextBox ID="tanklocation_txt" runat="server" Width="90%" Text='<%# Bind("TankLocation") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Type of facility (Terminal, Refinery, etc)</td>
+                        <td>
+                           <asp:TextBox ID="typeoffacility_txt" runat="server" Width="90%" Text='<%# Bind("TypeofFacility") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Manufacturer</td>
+                        <td>
+                           <asp:TextBox ID="manufacturer_txt" runat="server" Width="90%" Text='<%# Bind("Manufacturer") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Design Standard</td>
+                        <td>
+                           <asp:TextBox ID="designstandard_txt" runat="server" Width="90%" Text='<%# Bind("DesignStandard") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Product Prior to Inspection</td>
+                        <td>
+                           <asp:TextBox ID="productprior_txt" runat="server" Width="90%" Text='<%# Bind("ProductPriorInspection") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Design Specific Gravity</td>
+                        <td>
+                           <asp:TextBox ID="designspecifict_txt" runat="server" Width="90%" Text='<%# Bind("DesignSpecificGravity") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">PRODUCT SPECIFIC GRAVITY:</td>
+                        <td>
+                           <asp:TextBox ID="productspecific_txt" runat="server" Width="90%" Text='<%# Bind("ProductSpecificGravity") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">DESIGN PRESSURE:</td>
+                        <td>
+                           <asp:TextBox ID="designpressure_txt" runat="server" Width="90%" Text='<%# Bind("DesignPressure") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">OPERATING TEMPERATURE:</td>
+                        <td>
+                           <asp:TextBox ID="operatingtemp_txt" runat="server" Width="90%" Text='<%# Bind("OperatingTemperature") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td valign="top" class="style1" >CATHODIC PROTECTION &amp; TYPE
+                           (Impressed Current, Sacrificial Anodes):
+                        </td>
+                        <td>
+                           <asp:TextBox ID="cathodicprod_txt" runat="server" Width="90%" Text='<%# Bind("CathodicProtection") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">NAMEPLATE PRESENT:</td>
+                        <td>
+                           <asp:TextBox ID="nameplatepresent_txt" runat="server" Width="90%" Text='<%# Bind("NameplatePresent") %>' ></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">LATITUDE:</td>
+                        <td>
+                           <asp:TextBox ID="latitude_txt" runat="server" Width="90%" Text='<%# Bind("Latitude") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">LONGITUDE:</td>
+                        <td>
+                           <asp:TextBox ID="longitude_txt" runat="server" Width="90%" Text='<%# Bind("Longitude") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">DIAMETER:</td>
+                        <td>
+                           <asp:TextBox ID="diameter_txt" runat="server" Width="90%" Text='<%# Bind("Diameter") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">HEIGHT:</td>
+                        <td>
+                           <asp:TextBox ID="height_txt" runat="server" Width="90%" Text='<%# Bind("Height") %>' ></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">CAPACITY GROSS:</td>
+                        <td>
+                           <asp:TextBox ID="capacitygross_txt" runat="server" Width="90%" Text='<%# Bind("CapacityGross") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">OPERATING HEIGHT:</td>
+                        <td>
+                           <asp:TextBox ID="operatingheight_txt" runat="server" Width="90%" Text='<%# Bind("OperatingHeight") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">CAPACITY NOMINAL:</td>
+                        <td>
+                           <asp:TextBox ID="capacitynominal_txt" runat="server" Width="90%" Text='<%# Bind("CapacityNominal") %>' ></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">FOUNDATION:</td>
+                        <td>
+                           <asp:TextBox ID="foundation_txt" runat="server" Width="90%" Text='<%# Bind("Foundation") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">BOTTOM:</td>
+                        <td>
+                           <asp:TextBox ID="bottom_txt" runat="server" Width="90%" Text='<%# Bind("Bottom") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">SHELL:</td>
+                        <td>
+                           <asp:TextBox ID="shell_txt" runat="server" Width="90%" Text='<%# Bind("Shell") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">MATERIAL OF CONSTRUCTION:</td>
+                        <td>
+                           <asp:TextBox ID="materialofcons_txt" runat="server" Width="90%" Text='<%# Bind("MaterialofConstruction") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">COURSE 1 AVERAGE THICKNESS:</td>
+                        <td>
+                           <asp:TextBox ID="courseOneaverage_txt" runat="server" Width="90%" Text='<%# Bind("Course1Average") %>' ></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">FIXED ROOF:</td>
+                        <td>
+                           <asp:TextBox ID="fixedroof_txt" runat="server" Width="90%" Text='<%# Bind("FixedRoof") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">FLOATING ROOF:</td>
+                        <td>
+                           <asp:TextBox ID="floatingroof_txt" runat="server" Width="90%" Text='<%# Bind("FloatingRoof") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">PRIMARY SEAL:</td>
+                        <td>
+                           <asp:TextBox ID="primaryseal_txt" runat="server" Width="90%" Text='<%# Bind("PrimarySeal") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">SECONDARY SEAL:</td>
+                        <td>
+                           <asp:TextBox ID="secondaryseal_txt" runat="server" Width="90%" Text='<%# Bind("SecondarySeal") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">YEAR OF CONSTRUCTION:</td>
+                        <td>
+                           <asp:TextBox ID="yearofcons_txt" runat="server" Width="90%" Text='<%# Bind("YearofConstruction") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">SECOND BOTTOM &amp; DATE INSTALLED:</td>
+                        <td>
+                           <asp:TextBox ID="secondbottom_txt" runat="server" Width="90%" Text='<%# Bind("SecondBottom") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">LAST COATED:</td>
+                        <td>
+                           <asp:TextBox ID="lastcoated_txt" runat="server" Width="90%" Text='<%# Bind("LastCoated") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">LAST INSPECTION:</td>
+                        <td>
+                           <asp:TextBox ID="lastinspection_txt" runat="server" Width="90%" Text='<%# Bind("LastInspection") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Stairway</td>
+                        <td>
+                           <asp:TextBox ID="stairway_txt" runat="server" Width="90%" Text='<%# Bind("Stairway") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Floating Roof Access</td>
+                        <td>
+                           <asp:TextBox ID="floatingroofaccess_txt" runat="server" Width="90%" Text='<%# Bind("FloatingRoofAccess") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Bottom and Date applied</td>
+                        <td>
+                           <asp:TextBox ID="bottomanddateapplied_txt" runat="server" Width="90%" Text='<%# Bind("BottomandDateApplied") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td rowspan="2" class="style1">Shell</td>
+                        <td>
+                           EXTERNAL:
+                           <asp:TextBox ID="TextBox38" runat="server" Width="50%" Text='<%# Bind("ShellExternal") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           INTERNAL:
+                           <asp:TextBox ID="TextBox39" runat="server" Width="50%" Text='<%# Bind("ShellInternal") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td rowspan="2" class="style1">Fixed Roof</td>
+                        <td>
+                           EXTERNAL:
+                           <asp:TextBox ID="fixedroofext_txt" runat="server" Width="50%" Text='<%# Bind("FixedRoofExternal") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           INTERNAL:
+                           <asp:TextBox ID="fixedroofint_txt" runat="server" Width="50%" Text='<%# Bind("FixedRoofInternal") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td rowspan="2" class="style1">Floating Roof</td>
+                        <td>
+                           TOP SIDE:
+                           <asp:TextBox ID="floatingrooftopside_txt" runat="server" Width="50%" Text='<%# Bind("FloatingRoofTopSide") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           PRODUCT SIDE:
+                           <asp:TextBox ID="flaotingroofprodside_txt" runat="server" Text='<%# Bind("FloatingRoofProductSide") %>'  
+                              Width="50%"></asp:TextBox>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+               <br />
+               <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" 
+                  CommandName="Insert" Text="Insert" />
+               &nbsp;
+               <asp:LinkButton ID="InsertCancelButton" runat="server" 
+                  CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </InsertItemTemplate>
+            <ItemTemplate>
+               <table style="width: 100%; font-family: Tahoma; font-size: small;" 
+                  class="stylefontandSize">
+                  <tr>
+                     <td>
+                         Job Number:
+                     </td>
+                     <td colspan="3">
+                        <asp:TextBox ID="TextBox1" runat="server" 
+                           Text='<%# Bind("JobNumber") %>' />
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                         Start Date:
+                     </td>
+                     <td>
+                        <asp:TextBox ID="TextBox2" runat="server" 
+                           Text='<%# Bind("StartDate") %>' />
+                         <asp:CalendarExtender ID="TextBox2_CalendarExtender" runat="server" TargetControlID="TextBox2">
+                         </asp:CalendarExtender>
+                     </td>
+                     <td>
+                         End Date:
+                     </td>
+                     <td>
+                        <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("EndDate") %>' />
+                         <asp:CalendarExtender ID="TextBox3_CalendarExtender" runat="server" TargetControlID="TextBox3">
+                         </asp:CalendarExtender>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        Lead Inspector:
+                     </td>
+                     <td>
+                        <asp:TextBox ID="TextBox4" runat="server" 
+                           Text='<%# Bind("LeadInspector") %>' />
+                     </td>
+                     <td>
+                         Certification No:
+                     </td>
+                     <td>
+                        <asp:TextBox ID="TextBox5" runat="server" 
+                           Text='<%# Bind("CertificationNo") %>' />
+                     </td>
+                  </tr>
+               </table>
+               <table style="width:100%; font-family: Tahoma; font-size: small;" 
+                  class="stylefontandSize">
+                  <tr>
+                     <td class="style2">
+                        DOT Regulated Tank
+                     </td>
+                     <td>
+                        <asp:CheckBoxList ID="DOTregulatedtank_chl" runat="server" SelectedValue='<%# Bind("DOTRegulatedTank") %>' 
+                           style="display:inline" Width="107px" RepeatDirection="Horizontal">
+                           <asp:ListItem onclick = "MutExChkList(this);" >Yes</asp:ListItem>
+                           <asp:ListItem onclick = "MutExChkList(this);">No</asp:ListItem>
+                           <asp:ListItem style="display:none;" onclick = "MutExChkList(this);"></asp:ListItem>
+                        </asp:CheckBoxList>
+                     </td>
+                     <td>
+                        &nbsp;
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="style2">
+                        Tank Files Available for Review:
+                     </td>
+                     <td>
+                        <asp:CheckBoxList ID="TankFiles_chl" runat="server" SelectedValue='<%# Bind("TankFiles") %>'
+                           style="display:inline" Width="107px" RepeatDirection="Horizontal">
+                           <asp:ListItem onclick = "MutExChkList(this);" >Yes</asp:ListItem>
+                           <asp:ListItem onclick = "MutExChkList(this);">No</asp:ListItem>
+                           <asp:ListItem style="display:none;" onclick = "MutExChkList(this);"></asp:ListItem>
+                        </asp:CheckBoxList>
+                     </td>
+                     <td>
+                        &nbsp;
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="style2">
+                        Appropriate Paperwork left on site
+                     </td>
+                     <td>
+                        <asp:CheckBoxList ID="appropriateppw_chl" runat="server" SelectedValue =  '<%# Bind("AppropriatePPW") %>' 
+                           style="display:inline" Width="107px" RepeatDirection="Horizontal">
+                           <asp:ListItem onclick = "MutExChkList(this);" >Yes</asp:ListItem>
+                           <asp:ListItem onclick = "MutExChkList(this);">No</asp:ListItem>
+                           <asp:ListItem style="display:none;" onclick = "MutExChkList(this);"></asp:ListItem>
+                        </asp:CheckBoxList>
+                     </td>
+                     <td>
+                        &nbsp;
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="style2">
+                        Type of Inspection
+                     </td>
+                     <td>
+                        <asp:CheckBoxList ID="typeofins_chl" runat="server"  SelectedValue ='<%# Bind("TypeofInspection") %>'
+                           style="display:inline" Width="326px" RepeatDirection="Horizontal">
+                           <asp:ListItem onclick = "MutExChkList(this);">External</asp:ListItem>
+                           <asp:ListItem onclick = "MutExChkList(this);"> Internal</asp:ListItem>
+                           <asp:ListItem style="display:none;" onclick = "MutExChkList(this);">Both</asp:ListItem>
+                           <asp:ListItem onclick = "MutExChkList(this);">Both</asp:ListItem>
+                        </asp:CheckBoxList>
+                     </td>
+                     <td>
+                        &nbsp;
+                     </td>
+                  </tr>
+               </table>
+               <table border="1" cellspacing="0" cellpadding="0" width="98%" 
+                  style="font-family: Tahoma; font-size: small" class="stylefontandSize">
+                  <tbody>
+                     <tr>
+                        <td colspan="2" style="text-align: center" class="styleheader"><b>GENERAL:</b></td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Tank Number / Identification:</td>
+                        <td>
+                           <asp:TextBox ID="tankno_txt" runat="server" Width="90%" Text='<%# Bind("TankNumber") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">OWNER:</td>
+                        <td>
+                           <asp:TextBox ID="owner_txt" runat="server" Width="90%" Text='<%# Bind("Owner") %>' ></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Client (If different than owener)</td>
+                        <td>
+                           <asp:TextBox ID="client_txt" runat="server" Width="90%" Text='<%# Bind("Client") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Tank Location</td>
+                        <td>
+                           <asp:TextBox ID="tanklocation_txt" runat="server" Width="90%" Text='<%# Bind("TankLocation") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Type of facility (Terminal, Refinery, etc)</td>
+                        <td>
+                            <asp:DropDownList ID="typeoffacility_ddl" runat="server" Width="90%" SelectedValue='<%# Bind("TypeofFacility") %>' AppendDataBoundItems="True" DataSourceID="getFacilityType" DataTextField="Item_Description" DataValueField="Item_Description">
+                                <asp:ListItem></asp:ListItem>
+                            </asp:DropDownList>
+
+                            <asp:SqlDataSource ID="getFacilityType" runat="server" ConnectionString="<%$ ConnectionStrings:InspectionsEnterpriseConnectionString %>" SelectCommand="SELECT [Item_Description] FROM [RAM_Checklist_DropdownSelections] WHERE ([Dropdown_Description] = @Dropdown_Description)">
+                                <SelectParameters>
+                                    <asp:Parameter DefaultValue="Facility" Name="Dropdown_Description" Type="String" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Manufacturer</td>
+                        <td>
+                           <asp:TextBox ID="manufacturer_txt" runat="server" Width="90%" Text='<%# Bind("Manufacturer") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Design Standard</td>
+                        <td>
+                            <asp:DropDownList ID="DesignStan_ddl" Width="90%" SelectedValue='<%# Bind("DesignStandard") %>' runat="server" AppendDataBoundItems="True" DataSourceID="DesignStand_DS" DataTextField="Item_Description" DataValueField="Item_Description">
+                                <asp:ListItem></asp:ListItem>
+                            </asp:DropDownList>
+                                         <asp:SqlDataSource ID="DesignStand_DS" runat="server" ConnectionString="<%$ ConnectionStrings:InspectionsEnterpriseConnectionString %>" SelectCommand="SELECT [Item_Description] FROM [RAM_Checklist_DropdownSelections] WHERE ([Dropdown_Description] = @Dropdown_Description)">
+                                             <SelectParameters>
+                                                 <asp:Parameter DefaultValue="DesignStandard" Name="Dropdown_Description" Type="String" />
+                                             </SelectParameters>
+                            </asp:SqlDataSource>
+                                         </td>         </tr>
+                     <tr>
+                        <td class="style1">Product Prior to Inspection</td>
+                        <td>
+                           <asp:TextBox ID="productprior_txt" runat="server" Width="90%" Text='<%# Bind("ProductPriorInspection") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Design Specific Gravity</td>
+                        <td>
+                           <asp:TextBox ID="designspecifict_txt" runat="server" Width="90%" Text='<%# Bind("DesignSpecificGravity") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">PRODUCT SPECIFIC GRAVITY:</td>
+                        <td>
+                           <asp:TextBox ID="productspecific_txt" runat="server" Width="90%" Text='<%# Bind("ProductSpecificGravity") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">DESIGN PRESSURE:</td>
+                        <td>
+                           <asp:TextBox ID="designpressure_txt" runat="server" Width="90%" Text='<%# Bind("DesignPressure") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">OPERATING TEMPERATURE:</td>
+                        <td>
+                           <asp:TextBox ID="operatingtemp_txt" runat="server" Width="90%" Text='<%# Bind("OperatingTemperature") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td valign="top" class="style1" >CATHODIC PROTECTION &amp; TYPE
+                           (Impressed Current, Sacrificial Anodes):
+                        </td>
+                        <td>
+                           <asp:TextBox ID="cathodicprod_txt" runat="server" Width="90%" Text='<%# Bind("CathodicProtection") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">NAMEPLATE PRESENT:</td>
+                        <td>
+                           <asp:TextBox ID="nameplatepresent_txt" runat="server" Width="90%" Text='<%# Bind("NameplatePresent") %>' ></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">LATITUDE:</td>
+                        <td>
+                           <asp:TextBox ID="latitude_txt" runat="server" Width="90%" Text='<%# Bind("Latitude") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">LONGITUDE:</td>
+                        <td>
+                           <asp:TextBox ID="longitude_txt" runat="server" Width="90%" Text='<%# Bind("Longitude") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">DIAMETER:</td>
+                        <td>
+                           <asp:TextBox ID="diameter_txt" runat="server" Width="90%" Text='<%# Bind("Diameter") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">HEIGHT:</td>
+                        <td>
+                           <asp:TextBox ID="height_txt" runat="server" Width="90%" Text='<%# Bind("Height") %>' ></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">CAPACITY GROSS:</td>
+                        <td>
+                           <asp:TextBox ID="capacitygross_txt" runat="server" Width="90%" Text='<%# Bind("CapacityGross") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">OPERATING HEIGHT:</td>
+                        <td>
+                           <asp:TextBox ID="operatingheight_txt" runat="server" Width="90%" Text='<%# Bind("OperatingHeight") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">CAPACITY NOMINAL:</td>
+                        <td>
+                           <asp:TextBox ID="capacitynominal_txt" runat="server" Width="90%" Text='<%# Bind("CapacityNominal") %>' ></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">FOUNDATION:</td>
+                        <td>
+                           <asp:TextBox ID="foundation_txt" runat="server" Width="90%" Text='<%# Bind("Foundation") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">BOTTOM:</td>
+                        <td>
+                           <asp:TextBox ID="bottom_txt" runat="server" Width="90%" Text='<%# Bind("Bottom") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">SHELL:</td>
+                        <td>
+                           <asp:TextBox ID="shell_txt" runat="server" Width="90%" Text='<%# Bind("Shell") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">MATERIAL OF CONSTRUCTION:</td>
+                        <td>
+                           <asp:TextBox ID="materialofcons_txt" runat="server" Width="90%" Text='<%# Bind("MaterialofConstruction") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">COURSE 1 AVERAGE THICKNESS:</td>
+                        <td>
+                           <asp:TextBox ID="courseOneaverage_txt" runat="server" Width="90%" Text='<%# Bind("Course1Average") %>' ></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">FIXED ROOF:</td>
+                        <td>
+                           <asp:TextBox ID="fixedroof_txt" runat="server" Width="90%" Text='<%# Bind("FixedRoof") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">FLOATING ROOF:</td>
+                        <td>
+                           <asp:TextBox ID="floatingroof_txt" runat="server" Width="90%" Text='<%# Bind("FloatingRoof") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">PRIMARY SEAL:</td>
+                        <td>
+                           <asp:TextBox ID="primaryseal_txt" runat="server" Width="90%" Text='<%# Bind("PrimarySeal") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">SECONDARY SEAL:</td>
+                        <td>
+                           <asp:TextBox ID="secondaryseal_txt" runat="server" Width="90%" Text='<%# Bind("SecondarySeal") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">YEAR OF CONSTRUCTION:</td>
+                        <td>
+                           <asp:TextBox ID="yearofcons_txt" runat="server" Width="90%" Text='<%# Bind("YearofConstruction") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">SECOND BOTTOM &amp; DATE INSTALLED:</td>
+                        <td>
+                           <asp:TextBox ID="secondbottom_txt" runat="server" Width="90%" Text='<%# Bind("SecondBottom") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">LAST COATED:</td>
+                        <td>
+                           <asp:TextBox ID="lastcoated_txt" runat="server" Width="90%" Text='<%# Bind("LastCoated") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">LAST INSPECTION:</td>
+                        <td>
+                           <asp:TextBox ID="lastinspection_txt" runat="server" Width="90%" Text='<%# Bind("LastInspection") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Stairway</td>
+                        <td>
+                           <asp:TextBox ID="stairway_txt" runat="server" Width="90%" Text='<%# Bind("Stairway") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Floating Roof Access</td>
+                        <td>
+                           <asp:TextBox ID="floatingroofaccess_txt" runat="server" Width="90%" Text='<%# Bind("FloatingRoofAccess") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="style1">Bottom and Date applied</td>
+                        <td>
+                           <asp:TextBox ID="bottomanddateapplied_txt" runat="server" Width="90%" Text='<%# Bind("BottomandDateApplied") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td rowspan="2" class="style1">Shell</td>
+                        <td>
+                           EXTERNAL:
+                           <asp:TextBox ID="TextBox38" runat="server" Width="50%" Text='<%# Bind("ShellExternal") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           INTERNAL:
+                           <asp:TextBox ID="TextBox39" runat="server" Width="50%" Text='<%# Bind("ShellInternal") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td rowspan="2" class="style1">Fixed Roof</td>
+                        <td>
+                           EXTERNAL:
+                           <asp:TextBox ID="fixedroofext_txt" runat="server" Width="50%" Text='<%# Bind("FixedRoofExternal") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           INTERNAL:
+                           <asp:TextBox ID="fixedroofint_txt" runat="server" Width="50%" Text='<%# Bind("FixedRoofInternal") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td rowspan="2" class="style1">Floating Roof</td>
+                        <td>
+                           TOP SIDE:
+                           <asp:TextBox ID="floatingrooftopside_txt" runat="server" Width="50%" Text='<%# Bind("FloatingRoofTopSide") %>'></asp:TextBox>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           PRODUCT SIDE:
+                           <asp:TextBox ID="flaotingroofprodside_txt" runat="server" Text='<%# Bind("FloatingRoofProductSide") %>'  
+                              Width="50%"></asp:TextBox>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+               <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" 
+                  CommandName="Edit" Text="Edit" />
+               &nbsp;
+               <asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" 
+                  CommandName="Delete" Text="Delete" />
+               &nbsp;
+               <asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" 
+                  CommandName="New" Text="New" />
+            </ItemTemplate>
+         </asp:FormView>
